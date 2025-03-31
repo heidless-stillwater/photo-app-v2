@@ -1,0 +1,50 @@
+
+<div class="container">
+  
+  <h2 class="text-center mt-8 mb-4 text-white">User Profile</h2>
+
+  <div class="">    
+    <div class="card card-header results-block mt-3">
+      <!-- <%= gravatar_for @user, size: 300 %> -->
+
+      <div class="img-responsive center-block">
+        <%= image_tag @user.avatar, width: "400", class: "mx-auto d-block" %>
+      </div>
+
+      <div class="my-3 text-center">
+        <table class="col-md-12">
+          <tbody>
+            <tr>
+              <td>
+                <span class="">
+                  <strong>Email: </strong> <%= @user.email %>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="">
+                  <strong>username: </strong> <%= @user.username %>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="my-3 text-center">
+        <% if @user.images.attached? %>
+          <% @user.images.each do |image| %>
+            <%= image_tag(image, height: 100) %>
+            <%= link_to "Remove", remove_image_user_path(image), data: { turbo_method: :delete } %>
+            <br />
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+  
+  <%= link_to 'Back', root_path, class: "btn btn-primary mt-3" %>
+
+</div>
