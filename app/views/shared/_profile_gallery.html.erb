@@ -1,0 +1,10 @@
+
+      <div class="my-3 text-center">
+        <% if @user.images.attached? %>
+          <% @user.images.each do |image| %>
+            <%= image_tag(image, height: 100) %>
+            <%= link_to "Remove", remove_image_user_path(image), data: { turbo_method: :delete } %>
+            <br />
+          <% end %>
+        <% end %>
+      </div>

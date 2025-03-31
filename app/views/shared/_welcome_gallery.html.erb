@@ -1,0 +1,24 @@
+
+      <div class="my-3 text-center">
+        <% if current_user.images.attached? %>
+
+          <div class="row">
+            <% current_user.images.each do |image| %>
+              <div class="card card-header results-block mt-3 mb-3" style="width: 20rem;">
+                <div class="card-body">
+                  <%= image_tag(image, width: 250, class: "mcard-img-top x-auto d-block", alt:"Card image cap") %>
+                  <h5 class="card-title mt-2">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+
+                <%= button_to "Remove", remove_image_user_path(image), data: { turbo_method: :delete }, class: "btn btn-warning w-2" %>
+                <br />
+              </div>
+            <% end %>
+          </div>
+
+        <% end %>
+      </div>
+
+
