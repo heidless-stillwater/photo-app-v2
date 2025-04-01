@@ -51,24 +51,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_31_161048) do
     t.index ["user_id"], name: "index_artifacts_on_user_id"
   end
 
-  create_table "depictions", force: :cascade do |t|
-    t.string "name"
-    t.string "picture"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_depictions_on_user_id"
-  end
-
-  create_table "images", force: :cascade do |t|
-    t.string "name"
-    t.string "picture"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_images_on_user_id"
-  end
-
   create_table "payments", force: :cascade do |t|
     t.string "email"
     t.string "token"
@@ -98,6 +80,4 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_31_161048) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "artifacts", "users"
-  add_foreign_key "depictions", "users"
-  add_foreign_key "images", "users"
 end
