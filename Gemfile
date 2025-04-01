@@ -79,6 +79,6 @@ gem "image_processing", "~> 1.14"
 
 gem "google-cloud-storage", "~> 1.55"
 
-gem "fog", "~> 0.7.2"
+gem "fog", "~> 2.3.0"
 
 gem "streamio-ffmpeg", "~> 3.0"
