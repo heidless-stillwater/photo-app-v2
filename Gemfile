@@ -73,8 +73,6 @@ gem "carrierwave", "~> 3.1"
 
 gem "mini_magick", "~> 5.2"
 
-gem "fog-core", "~> 2.6"
-
 gem "ffi", "~> 1.17"
 
 gem "image_processing", "~> 1.14"
@@ -82,3 +80,5 @@ gem "image_processing", "~> 1.14"
 gem "google-cloud-storage", "~> 1.55"
 
 gem "fog", "~> 0.7.2"
+
+gem "streamio-ffmpeg", "~> 3.0"
