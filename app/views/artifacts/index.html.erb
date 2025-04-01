@@ -1,16 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Artifacts" %>
+<div class="container">
 
-<h1>Artifacts</h1>
+  <% content_for :title, "Artifacts" %>
 
-<div id="artifacts">
-  <% @artifacts.each do |artifact| %>
-    <%= render artifact %>
-    <p>
-      <%= link_to "Show this artifact", artifact %>
-    </p>
-  <% end %>
+  <h1 class="text-center mt-8 mb-4 text-white">Artifacts</h2>
+
+
+  <div id="artifacts">
+    <% @artifacts.each do |artifact| %>
+      <%= render artifact %>
+      <p>
+        <%= link_to "Show this artifact", artifact, class: "btn btn-warning mt-1" %>
+      </p>
+    <% end %>
+    <div class="center">
+      <%= link_to "New Artifact", new_artifact_path, class: "btn btn-success mt-5" %>
+    </div>
+
+  </div>
 </div>
 
-<%= link_to "New artifact", new_artifact_path %>
+
+

@@ -1,34 +1,35 @@
-<%= form_with(model: artifact) do |form| %>
-  <% if artifact.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
 
-      <ul>
-        <% artifact.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="container col-6">
+  <%= form_with(model: artifact) do |form| %>
+    <% if artifact.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(artifact.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+        <ul>
+          <% image.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <form>
+      <div class="form-group">
+        <%= form.label :name, style: "display: block", class: "flabel" %>
+        <%= form.text_field :name, class:"form-control" %>
+      </div>
+
+      <div class="form-group mt-3">
+        <%= form.label :picture, style: "display: block", class: "flabel" %>
+        <%= form.text_field :picture, class:"form-control" %>
+      </div>
+
+      <div class="form-group mt-3">
+        <%= form.label :user_id, style: "display: block", class: "flabel" %>
+        <%= form.text_field :user_id, class:"form-control" %>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Create Artifact</button>
+    </form>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :artifact, :class => 'control-label' %>
-    <div class="controls">
-      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-    </div>
-  </div>
-  
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

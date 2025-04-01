@@ -21,6 +21,19 @@
                               class: "dropdown-item" %>
             </ul>
           </li>
+          
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Artifacts
+          </a>
+          <div class="dropdown-menu">
+            <% if current_user %>
+              <%= link_to "New Artifact", new_artifact_path, class: "dropdown-item" %>
+            <% end %>
+            <%= link_to "View Artifacts", artifacts_path, class: "dropdown-item" %>
+          </div>
+        </li>  
+        
         <% end%>
       </ul>
 
@@ -39,7 +52,8 @@
           <li class="nav-item me-3">
             <%= button_to "Plans", root_path, class: "btn btn-xs btn-primary" %>
           </li>
-        <% end %>
+        <% end %>    
+
       </ul>
 
       <form class="d-flex" role="search">
