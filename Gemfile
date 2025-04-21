@@ -77,7 +77,7 @@ gem "ffi", "~> 1.17"
 
 gem "image_processing", "~> 1.14"
 
-gem "google-cloud-storage", "~> 1.55"
+gem "google-cloud-storage", "~> 1.56"
 
 gem "fog", "~> 0.7.2"
 
