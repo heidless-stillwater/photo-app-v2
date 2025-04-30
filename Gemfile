@@ -67,7 +67,7 @@ gem "sass-rails", "~> 6.0"
 
 gem "font-awesome-rails", "~> 4.7"
 
-gem "stripe", "~> 13.5"
+gem "stripe", "~> 15.1"
 
 gem "carrierwave", "~> 3.1"
 
